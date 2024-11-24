@@ -1,7 +1,6 @@
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: grid;
+  place-content: center;
 }
 
 .title {
@@ -11,10 +10,11 @@
 }
 
 .weatherGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
 }
 
 .error {
