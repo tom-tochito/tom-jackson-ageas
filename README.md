@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+## Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+First, clone the repo and install the dependencies:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Then, start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+To run the tests:
+
+```bash
+npm run test
+```
+
+The app will be running on [http://localhost:5173](http://localhost:5173)
+
+# Weather Forecast App
+
+This web app was built with React and TypeScript and shows a detailed 5-day weather forecasts based on the city you search for. The app uses the Open-Meteo API to fetch realtime weather data, which is then mapped and displayed.
+
+The UI has a smart search bar with location auto-complete, and each weather card displays comprehensive information regarding the weather. The weather conditions are represented by custom SVG icons that match the current weather state.
+
+CSS Modules was used for styling and smooth animations - cards animate on hover with subtle elevation changes, and weather data transitions smoothly when new locations are selected. The app is fully responsive so can work nicely on all devices and adds accessibility features.
+
+I used TypeScript for type safety, CSS Modules for style encapsulation, and Vitest and jest for testing.
+
+Hope you enjoy using it and looking forward to your feedback!
+
+

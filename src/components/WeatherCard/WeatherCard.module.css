@@ -1,9 +1,16 @@
 .card {
   background-color: white;
   border-radius: 8px;
+  width: 200px;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .day {
@@ -84,4 +91,9 @@
   width: 64px;
   height: 64px;
   margin: 0.5rem auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover .weatherIcon {
+  transform: scale(1.75);
 } 
