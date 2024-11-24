@@ -78,4 +78,10 @@
 
 .sunTime p {
   margin: 0;
+}
+
+.weatherIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0.5rem auto;
 } 

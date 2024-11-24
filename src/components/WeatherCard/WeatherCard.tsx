@@ -6,11 +6,43 @@ interface WeatherCardProps {
 }
 
 export const WeatherCard = ({ weather }: WeatherCardProps) => {
+  const getWeatherIcon = (condition: string) => {
+    switch (condition.toLowerCase()) {
+      case 'clear sky':
+        return '/images/clear-sky.svg';
+      case 'mainly clear':
+      case 'partly cloudy':
+        return '/images/cloudy.svg';
+      case 'overcast':
+        return '/images/overcast.svg';
+      case 'rain':
+      case 'rain showers':
+      case 'drizzle':
+        return '/images/rain.svg';
+      case 'snow':
+      case 'snow grains':
+      case 'snow showers':
+        return '/images/snow.svg';
+      case 'thunderstorm':
+      case 'thunderstorm with hail':
+        return '/images/thunderstorms.svg';
+      case 'foggy':
+        return '/images/wind.svg';
+      default:
+        return '/images/cloudy.svg';
+    }
+  };
+
   return (
     <div className={styles.card}>
       <h2 className={styles.day}>{weather.dayOfWeek}</h2>
       <p className={styles.date}>{weather.date}</p>
       <div className={styles.details}>
+        <img 
+          src={getWeatherIcon(weather.condition)} 
+          alt={weather.condition}
+          className={styles.weatherIcon}
+        />
         <div className={styles.temperature}>
           <span className={styles.tempMax}>{weather.temperature.max}°</span>
           <span className={styles.tempMin}>{weather.temperature.min}°</span>
